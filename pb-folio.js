@@ -1,4 +1,4 @@
-import { PbLink } from 'https://cdn.jsdelivr.net/npm/@teipublisher/pb-components@2.19.0/dist/pb-components-bundle.js';
+import { PbLink } from "https://cdn.jsdelivr.net/npm/@teipublisher/pb-components@2.19.0/src/pb-link.js";
 
 export class PbFolio extends PbLink {
   static get properties() {
@@ -6,7 +6,6 @@ export class PbFolio extends PbLink {
       ...super.properties,
       xmlId2: { type: String, attribute: 'xml-id2' },
       channel2: { type: String, attribute: 'channel2' }
-
     };
   }
 
@@ -18,11 +17,7 @@ export class PbFolio extends PbLink {
 
   _onClick(ev) {
     ev.preventDefault();
-
-    // 1️⃣ Standardowy PbLink: używa emit + xmlId → URL w pasku
     super._onClick(ev);
-
-    // 2️⃣ Drugi kanał: wysyłamy xmlId2
     if (this.xmlId2) {
       this.emitTo(this.channel2, { id: this.xmlId2 });
     }
