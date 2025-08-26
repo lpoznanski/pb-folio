@@ -1,4 +1,4 @@
-import { PbLink } from "https://cdn.jsdelivr.net/npm/@teipublisher/pb-components@2.19.0/src/pb-link.js";
+import { PbLink } from "https://cdn.jsdelivr.net/npm/@teipublisher/pb-components@2.19.0/dist/pb-components-bundle.js";
 
 export class PbFolio extends PbLink {
   static get properties() {
